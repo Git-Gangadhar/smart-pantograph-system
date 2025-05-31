@@ -1,0 +1,160 @@
+body {
+  font-family: sans-serif;
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.panel, .switches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #333;
+  border: 2px solid #888;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.btn.red { background-color: #a00; }
+.btn:active { background-color: #0a0; }
+
+.switch {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.train-display {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+}
+
+.overhead-wire {
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  position: relative;
+  top: 0;
+  margin-bottom: 60px;
+}
+
+.neutral-section {
+  width: 40px;
+  height: 2px;
+  background: yellow;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.train {
+  width: 300px;
+  height: 100px;
+  background: gray;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.vcb-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.pantograph {
+  width: 6px;
+  height: 60px;
+  background: silver;
+  position: absolute;
+  top: -60px;
+  transition: transform 0.5s;
+}
+
+#panto1 { left: 60px; }
+#panto2 { right: 60px; }
+
+.up { transform: translateY(0); }
+.down { transform: translateY(60px); }
+
+.direction-arrow {
+  font-size: 2em;
+  position: absolute;
+  top: 40%;
+  left: -50px;
+  color: yellow;
+}
+
+.status {
+  margin-top: 15px;
+  font-size: 1.1em;
+  color: lime;
+}
+
+/* Rotary knob styling */
+.rotary {
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  background: #444;
+  border: 3px solid #888;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+  box-shadow: inset 0 0 10px #666;
+}
+
+/* Pointer arrow triangle */
+.pointer-arrow {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid yellow;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Centered label */
+.knob-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  pointer-events: none;
+}
+
+.switch label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}

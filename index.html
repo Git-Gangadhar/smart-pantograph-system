@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMART PANTOGRAPH SYSTEM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>SMART PANTOGRAPH SYSTEM</h1>
+
+  <!-- Train Visual Display -->
+  <div class="train-display">
+    <div class="overhead-wire">
+      <div class="neutral-section"></div>
+    </div>
+
+    <div class="direction-arrow" id="arrow">⬅️</div>
+    <div class="train">
+      <div class="vcb-dot" id="vcbDot"></div>
+      <div class="pantograph down" id="panto1"></div>
+      <div class="pantograph down" id="panto2"></div>
+    </div>
+    <div class="status" id="status">Status: System Ready</div>
+  </div>
+
+  <!-- Control Buttons -->
+  <div class="panel">
+    <div class="btn" onclick="setVCB('reset')">VCB RESET</div>
+    <div class="btn" onclick="setVCB('close')">VCB CLOSE</div>
+    <div class="btn" onclick="setVCB('open')">VCB OPEN</div>
+    <div class="btn" onclick="raisePantograph()">AUX ON / PANTO UP</div>
+    <div class="btn" onclick="lowerPantograph()">PANTO DOWN</div>
+  </div>
+
+  <!-- Switches -->
+  <div class="switches">
+    <div class="switch">
+      <label>PANTOGRAPH SELECTOR</label>
+      <div class="rotary" id="pantoSelectorKnob" onclick="rotatePantoSelector()">
+        <div class="pointer-arrow"></div>
+        <div class="knob-label" id="pantoSelectorLabel">PANTO.2</div>
+      </div>
+    </div>
+
+    <div class="switch">
+      <label>PANTOGRAPH MODE</label>
+      <div class="rotary" id="pantoModeKnob" onclick="rotatePantoMode()">
+        <div class="pointer-arrow"></div>
+        <div class="knob-label" id="pantoModeLabel">AUTO</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
